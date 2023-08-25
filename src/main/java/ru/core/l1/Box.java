@@ -1,12 +1,15 @@
 package ru.core.l1;
 
 public class Box {
-    double width;
-    double height;
-    double length;
+    private double width;
+    private double height;
+    private double length;
 
-    public Box() {
+    public Box(double width, double height, double length) {
 
+        this.width = width;
+        this.height = height;
+        this.length = length;
     }
 
     public void setDimens(double width, double height, double length) {
