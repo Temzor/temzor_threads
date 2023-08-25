@@ -29,8 +29,6 @@ public class Box {
         this.length = box.length;
     }
 
-    //Ваше решение может отличаться, я сделал так: если мы просто у новой коробки укажем длину и ширину и высоту равную сумме двух коробок,
-    //то получившаяся коробка по объему однозначно получится больше суммы тех двух коробок.
     Box(Box box1, Box box2) {
         this.width = box1.width + box2.width;
         this.length = box1.length + box2.length;
