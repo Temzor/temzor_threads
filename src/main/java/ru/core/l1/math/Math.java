@@ -12,7 +12,7 @@ public class Math {
     }
 
     public static double area(double radius) {
-        return 2 * PI * radius;
+        return PI * java.lang.Math.pow(radius, 2);
     }
 
     public static int sum(int... number) {
