@@ -1,4 +1,4 @@
-package ru.core.l1;
+package ru.core.l1.temp;
 
 public class Space {
     public static void main(String[] args) {

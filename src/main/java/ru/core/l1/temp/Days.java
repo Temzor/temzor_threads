@@ -1,4 +1,4 @@
-package ru.core.l1;
+package ru.core.l1.temp;
 
 public class Days {
     public static void main(String[] args) {
