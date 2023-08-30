@@ -1,4 +1,5 @@
 package ru.core.l1.interfacea;
 
-public class Animal {
+public abstract class Animal {
+    public abstract void eat();
 }
