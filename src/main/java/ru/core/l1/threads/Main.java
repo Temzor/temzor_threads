@@ -6,8 +6,5 @@ public class Main {
         Thread thread = new Thread(runnableTimer);
         thread.start();
 
-        RunnableTimer runnableTimer2 = new RunnableTimer();
-        Thread thread2 = new Thread(runnableTimer2);
-        thread2.start();
     }
 }
