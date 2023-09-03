@@ -45,7 +45,7 @@ public class TempArrayList {
     }
 
     public String get(int index) {
-        if(index >=0 && index<size){
+        if (index >= 0 && index < size) {
             return arrayStrings[index];
         }
         return "Element not found";

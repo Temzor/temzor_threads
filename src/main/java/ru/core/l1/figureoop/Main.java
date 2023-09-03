@@ -1,4 +1,4 @@
-package ru.core.l1.figureOOP;
+package ru.core.l1.figureoop;
 
 public class Main {
     public static void main(String[] args) {

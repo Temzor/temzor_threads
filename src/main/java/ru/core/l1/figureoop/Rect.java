@@ -1,4 +1,4 @@
-package ru.core.l1.figureOOP;
+package ru.core.l1.figureoop;
 
 public class Rect extends Figure {
     public Rect(double a, double b) {

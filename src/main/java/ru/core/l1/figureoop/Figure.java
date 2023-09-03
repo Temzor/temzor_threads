@@ -1,4 +1,4 @@
-package ru.core.l1.figureOOP;
+package ru.core.l1.figureoop;
 
 public abstract class Figure {
     private final double a;
