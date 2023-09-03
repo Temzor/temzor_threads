@@ -40,4 +40,16 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertThat(calculator.multiply(-35, 77)).isEqualTo(-2_695);
     }
+
+    @Test
+    void whenCalculatorThenDividedPlus() {
+        Calculator calculator = new Calculator();
+        assertThat(calculator.divided(24, 8)).isEqualTo(3);
+    }
+
+    @Test
+    void whenCalculatorThenDividedMinus() {
+        Calculator calculator = new Calculator();
+        assertThat(calculator.divided(-44, 4)).isEqualTo(-11);
+    }
 }
