@@ -4,6 +4,9 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.core.l2.collections.arrayl.Car;
+import ru.core.l2.collections.arrayl.CarLast;
+import ru.core.l2.collections.arrayl.CarList;
 
 class CarLastTest {
 

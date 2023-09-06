@@ -1,4 +1,4 @@
-package ru.core.l2.collections;
+package ru.core.l2.collections.arrayl;
 
 public interface CarList {
     Car get(int index);

@@ -1,4 +1,4 @@
-package ru.core.l2.collections;
+package ru.core.l2.collections.arrayl;
 
 public class Car {
     private final String brand;
