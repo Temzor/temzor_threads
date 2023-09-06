@@ -3,14 +3,14 @@ package ru.core.l2.collections.linkedl;
 import ru.core.l2.collections.arrayl.Car;
 import ru.core.l2.collections.arrayl.CarList;
 
-public class CArLinkedList implements CarList {
+public class CarLinkedList implements CarList {
     private Node firstElement;
     private Node lastElement;
     private int size = 0;
 
     @Override
     public Car get(int index) {
-        return null;
+        return getNode(index).value;
     }
 
     @Override
@@ -49,6 +49,13 @@ public class CArLinkedList implements CarList {
 
     @Override
     public boolean remove(Car car) {
+        Node node = firstElement;
+        for (int i = 0; i < size; i++) {
+            if (node.value.equals(car)) {
+                return removeAt(i);
+            }
+            node = node.next;
+        }
         return false;
     }
 
@@ -78,10 +85,15 @@ public class CArLinkedList implements CarList {
 
     @Override
     public void clear() {
-
+        firstElement = null;
+        lastElement = null;
+        size = 0;
     }
 
     private Node getNode(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
         Node node = firstElement;
         for (int i = 0; i < index; i++) {
             node = node.next;
@@ -91,7 +103,7 @@ public class CArLinkedList implements CarList {
 
     private static class Node {
         private Node previous;
-        private Car value;
+        private final Car value;
         private Node next;
 
         public Node(Node previous, Car value, Node next) {
