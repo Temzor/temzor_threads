@@ -1,10 +1,13 @@
 package ru.core.l2.collections.arrayl;
 
-public interface CarList {
+import ru.core.l2.collections.CarCollections;
+
+public interface CarList extends CarCollections {
     Car get(int index);
 
-    void add(Car car);
-    void add(Car car, int index);
+    boolean add(Car car);
+
+    boolean add(Car car, int index);
 
     boolean remove(Car car);
 
@@ -13,5 +16,7 @@ public interface CarList {
     int size();
 
     void clear();
+
+    boolean contains(Car car);
 
 }

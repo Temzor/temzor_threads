@@ -79,6 +79,7 @@ class CarListTest {
         Car carFromList = carList.get(50);
         assertThat(carFromList.getBrand()).isEqualTo(car.getBrand());
     }
+
     @Test
     public void insertIntoLastPosition() {
         Car car = new Car("BMW", 1);
@@ -86,4 +87,15 @@ class CarListTest {
         Car carFromList = carList.get(100);
         assertThat(carFromList.getBrand()).isEqualTo(car.getBrand());
     }
+
+    @Test
+    public void whenCarContainsElementThenReturnTrue() {
+        assertThat(carList.contains(new Car("Brand29", 29))).isTrue();
+    }
+
+    @Test
+    public void whenCarNoContainsElementThenReturnFalse() {
+        assertThat(carList.contains(new Car("Brand14", 22))).isFalse();
+    }
+
 }

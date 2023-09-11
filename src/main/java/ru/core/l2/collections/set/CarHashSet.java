@@ -69,6 +69,27 @@ public class CarHashSet implements CarSet {
     }
 
     @Override
+    public boolean contains(Car car) {
+        int position = getElementPosition(car, array.length);
+        if (array[position] == null) {
+            return false;
+        }
+        Entry secondLast = array[position];
+        Entry last = secondLast.next;
+        if (secondLast.value.equals(car)) {
+            return true;
+        }
+        while (last != null) {
+            if (last.value.equals(car)) {
+                return true;
+            } else {
+                last = last.next;
+            }
+        }
+        return false;
+    }
+
+    @Override
     public int size() {
         return size;
     }
@@ -78,6 +99,7 @@ public class CarHashSet implements CarSet {
         array = new Entry[INITIAL_CAPACITY];
         size = 0;
     }
+
 
     private void increaseArray() {
         Entry[] newArray = new Entry[array.length * 2];

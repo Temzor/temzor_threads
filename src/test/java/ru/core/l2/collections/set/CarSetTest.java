@@ -35,7 +35,7 @@ class CarSetTest {
     @Test
     void whenRemoveElementsThenTrue() {
         assertThat(carSet.remove(new Car("Brand30", 30))).isTrue();
-        assertThat(carSet.remove(new Car("Brand30", 30))).isFalse();
+        assertThat(carSet.remove(new Car("Bran d30", 30))).isFalse();
         assertThat(carSet.size()).isEqualTo(99);
     }
 }
