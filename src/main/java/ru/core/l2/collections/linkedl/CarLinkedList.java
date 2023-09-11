@@ -3,6 +3,8 @@ package ru.core.l2.collections.linkedl;
 import ru.core.l2.collections.arrayl.Car;
 import ru.core.l2.collections.arrayl.CarList;
 
+import java.util.Iterator;
+
 public class CarLinkedList implements CarList {
     private Node firstElement;
     private Node lastElement;
@@ -113,6 +115,30 @@ public class CarLinkedList implements CarList {
             node = node.next;
         }
         return -1;
+    }
+
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<>() {
+            private Node node = firstElement;
+
+            @Override
+            public boolean hasNext() {
+                return node != null;
+            }
+
+            @Override
+            public Car next() {
+                Car car = node.value;
+                node = node.next;
+                return car;
+            }
+        };
     }
 
     private static class Node {

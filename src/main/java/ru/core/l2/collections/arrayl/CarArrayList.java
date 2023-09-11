@@ -1,6 +1,7 @@
 package ru.core.l2.collections.arrayl;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class CarArrayList implements CarList {
     private Car[] array = new Car[10];
@@ -72,7 +73,6 @@ public class CarArrayList implements CarList {
     }
 
 
-
     private void checkIndex(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
@@ -83,5 +83,27 @@ public class CarArrayList implements CarList {
         if (size >= array.length) {
             array = Arrays.copyOf(array, array.length * 2);
         }
+    }
+
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<>() {
+            int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Car next() {
+                return array[index++];
+            }
+        };
     }
 }

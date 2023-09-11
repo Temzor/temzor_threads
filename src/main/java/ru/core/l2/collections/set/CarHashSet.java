@@ -2,6 +2,8 @@ package ru.core.l2.collections.set;
 
 import ru.core.l2.collections.arrayl.Car;
 
+import java.util.Iterator;
+
 public class CarHashSet implements CarSet {
     private static final int INITIAL_CAPACITY = 16;
     private static final float LOAD_FACTOR = 0.75f;
@@ -115,6 +117,42 @@ public class CarHashSet implements CarSet {
 
     private int getElementPosition(Car car, int arrayLength) {
         return Math.abs(car.hashCode() % arrayLength);
+    }
+
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<>() {
+            int index = 0;
+            int arrayIndex = 0;
+            Entry entry;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Car next() {
+                while (array[arrayIndex] == null) {
+                    arrayIndex++;
+                }
+                if (entry == null) {
+                    entry = array[arrayIndex];
+                }
+                Car result = entry.value;
+                entry = entry.next;
+                if (entry == null) {
+                    arrayIndex++;
+                }
+                index++;
+                return result;
+            }
+        };
     }
 
     private static class Entry {
