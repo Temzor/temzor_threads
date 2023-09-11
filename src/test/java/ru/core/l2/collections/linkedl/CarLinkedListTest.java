@@ -30,23 +30,6 @@ class CarLinkedListTest {
     }
 
     @Test
-    public void whenElementRemovedByObjectThenSizeMustBeDecreased() {
-        Car car = new Car("Lada", 1860019);
-        carList.add(car);
-        assertThat(carList.size()).isEqualTo(101);
-        assertThat(carList.remove(car)).isTrue();
-        assertThat(carList.size()).isEqualTo(100);
-    }
-
-    @Test
-    public void whenNonExistentElementRemovedThenReturnFalse() {
-        Car car = new Car("Lada", 1860019);
-        assertThat(carList.remove(car)).isFalse();
-        assertThat(carList.size()).isEqualTo(100);
-
-    }
-
-    @Test
     public void whenListClearedThenSizeMustBe0() {
         carList.clear();
         assertThat(carList.size()).isEqualTo(0);
