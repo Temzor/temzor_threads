@@ -3,22 +3,14 @@ package ru.core.l2.collections.hashmap;
 import java.util.Objects;
 
 public class CarOwner {
-    private int id;
+    private final int id;
     private String name;
-    private String lastName;
+    private final String lastName;
 
     public CarOwner(int id, String name, String lastName) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -27,14 +19,6 @@ public class CarOwner {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     @Override
