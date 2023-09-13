@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 import ru.core.l2.collections.arrayl.Car;
 
 class CarHashMapTest {
-    private CarHashMap map;
+    private CarMap map;
 
     @BeforeEach
     void setUp() {
-        map = new CarMap();
+        map = new CarHashMap();
 
     }
 
@@ -26,11 +26,11 @@ class CarHashMapTest {
     }
 
     @Test
-    public void whenPut100ElementsWith10DifferentKeysThenSizeBecome10() {
+    public void whenPut100ElementsWith10DifferentKeysThenSize10() {
         for (int i = 0; i < 100; i++) {
             int index = i % 10;
             CarOwner carOwner = new CarOwner(index, "Name" + index, "LastName" + index);
-            Car car = new Car("Brand" + i, i);
+            Car car = new Car("Brand" + index, index);
             map.put(carOwner, car);
         }
         assertThat(map.size()).isEqualTo(10);
@@ -66,15 +66,15 @@ class CarHashMapTest {
     }
 
     @Test
-    public void methodGetMustReturnRightValues() {
+    public void methodGetMustReturnRightValue() {
         for (int i = 0; i < 100; i++) {
             CarOwner carOwner = new CarOwner(i, "Name" + i, "LastName" + i);
             Car car = new Car("Brand" + i, i);
             map.put(carOwner, car);
         }
-
         CarOwner key = new CarOwner(50, "Name50", "LastName50");
         Car value = map.get(key);
-        assertThat(value.getBrand()).isEqualTo("Brand50");
+        String expectedCarBrand = "Brand50";
+        assertThat(value.getBrand()).isEqualTo(expectedCarBrand);
     }
 }
