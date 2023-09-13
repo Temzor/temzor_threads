@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import ru.core.l2.collections.arrayl.Car;
 
 class CarHashMapTest {
-    private CarMap map;
+    private CarHashMap map;
 
     @BeforeEach
     void setUp() {
