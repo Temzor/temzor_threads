@@ -1,4 +1,4 @@
-package ru.j4j;
+package ru.j4j.calculator;
 
 public class Calculator {
 
