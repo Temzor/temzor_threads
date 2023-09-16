@@ -3,6 +3,7 @@ package ru.core.code.eight;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import ru.eight.RemoveChars;
 
 class RemoveCharsTest {
     @Test

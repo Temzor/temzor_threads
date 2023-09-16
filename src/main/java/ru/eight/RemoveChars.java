@@ -1,4 +1,4 @@
-package ru.core.code.eight;
+package ru.eight;
 
 public class RemoveChars {
     public static String remove(String s) {

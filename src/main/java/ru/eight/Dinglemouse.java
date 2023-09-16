@@ -1,4 +1,4 @@
-package ru.core.code.eight;
+package ru.eight;
 
 public class Dinglemouse {
     public static String replaceDots(final String sting) {

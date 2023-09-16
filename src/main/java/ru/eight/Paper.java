@@ -1,4 +1,4 @@
-package ru.core.code.eight;
+package ru.eight;
 
 public class Paper {
     public static int paperWork(int n, int m) {

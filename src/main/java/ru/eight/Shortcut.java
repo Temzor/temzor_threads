@@ -1,4 +1,4 @@
-package ru.core.code.eight;
+package ru.eight;
 
 public class Shortcut {
     public static String shortcut(String input) {
