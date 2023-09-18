@@ -9,6 +9,11 @@ class FitTest {
     public void manWeightTest() {
         assertThat(Fit.manWeight(184)).isEqualTo(96.6f);
     }
+    @Test
+    public void manBigWeightTest() {
+        assertThat(Fit.manWeight(240)).isEqualTo(161.0f);
+    }
+
 
     @Test
     public void womanWeightTest() {
