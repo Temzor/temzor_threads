@@ -14,5 +14,4 @@ class TriangleTest {
     void testFalse() {
         assertThat(Triangle.exist(1, 14, 15)).isFalse();
     }
-
 }
