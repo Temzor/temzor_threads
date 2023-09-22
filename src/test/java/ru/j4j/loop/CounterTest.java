@@ -44,4 +44,13 @@ class CounterTest {
     void testStartMinus15FinishMinus20yEven() {
         assertThat(Counter.sumByEven(-15, -20)).isEqualTo(0);
     }
+
+    @Test
+    void whenSumEvenNumbersFromOneToTenThenThirty() {
+        int start = 1;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 30;
+        assertThat(result).isEqualTo(expected);
+    }
 }
