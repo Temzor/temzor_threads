@@ -4,11 +4,14 @@ public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
-                boolean left = (row + cell) % 2 == 0;
+                boolean left = row == cell; /* добавить условие для левой диагонали - с левого верхнего угла в правый нижний*/
+                boolean right = size - row - 1 == cell; /* добавить условие для правой диагонали - из левого нижнего в правый верхний*/
                 if (left) {
                     System.out.print("0");
+                } else if (right) {
+                    System.out.print("0");
                 } else {
-                    System.out.print("X");
+                    System.out.print(" ");
                 }
             }
             System.out.println();
