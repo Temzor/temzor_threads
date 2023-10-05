@@ -40,4 +40,22 @@ class TwoNumberSumTest {
         int[] expected = {2, 4};
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void whenTwoEqualsNumbersNoTargetWithAlgoAccelerationCheck() {
+        int[] array = {5, 5, 5, 5, 5};
+        int target = 12;
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        int[] expected = {};
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenWithoutNegativeNumbersYesTargetWithAlgoAccelerationCheck() {
+        int[] array = {0, 2, 5, 6, 8, 10, 12};
+        int target = 11;
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        int[] expected = {2, 3};
+        assertThat(result).isEqualTo(expected);
+    }
 }
