@@ -1,13 +1,34 @@
 package ru.j4j.oop;
 
 public class Cat {
+    private String food;
+    private String name;
+
     public String sound() {
         return "may-may";
     }
+
+    public void show() {
+        System.out.println(this.name);
+        System.out.println(this.food);
+    }
+
+    public void eat(String meat) {
+        this.food = meat;
+    }
+
+    public void giveNick(String nick) {
+      this.name = nick;
+    }
+
     public static void main(String[] args) {
-        Cat petty = new Cat();
-        Cat sparky = new Cat();
-        System.out.println("Petty says: " + petty.sound());
-        System.out.println("Sparky says: " + sparky.sound());
+        Cat gav = new Cat();
+        gav.giveNick("Gav");
+        gav.eat("kotleta");
+        gav.show();
+        Cat black = new Cat();
+        black.giveNick("Black");
+        black.eat("fish");
+        black.show();
     }
 }
