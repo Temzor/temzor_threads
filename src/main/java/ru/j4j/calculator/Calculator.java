@@ -2,20 +2,39 @@ package ru.j4j.calculator;
 
 public class Calculator {
 
-    public static void plus(int first, int second) {
-        int result = first + second;
-        System.out.println(result);
+    private static final int X = 5;
+
+    public static int sum(int y) {
+        return X + y;
     }
 
-    public static void minus(int first, int second) {
-        int result = first - second;
-        System.out.println(result);
+    public static int minus(int y) {
+        return y - X;
+    }
+
+    public int multiply(int y) {
+        return y * X;
+    }
+
+    public int divide(int y) {
+        return y / X;
+    }
+
+    public int sumAllOperation(int y) {
+        return sum(y) + minus(y) + multiply(y) + divide(y);
     }
 
     public static void main(String[] args) {
-        plus(1, 2);
-        plus(10, 11);
-        minus(9, 8);
-        minus(6, 18);
+        Calculator calculator = new Calculator();
+        int result = sum(10);
+        System.out.println(result);
+        result = minus(10);
+        System.out.println(result);
+        result = calculator.multiply(10);
+        System.out.println(result);
+        result = calculator.divide(10);
+        System.out.println(result);
+        result = calculator.sumAllOperation(10);
+        System.out.println(result);
     }
 }
