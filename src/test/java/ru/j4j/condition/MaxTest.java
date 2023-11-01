@@ -19,4 +19,14 @@ class MaxTest {
     void whenFirstISEqualsSecondThenReturnFirst() {
         assertThat(Max.max(5, 1)).isEqualTo(5);
     }
+
+    @Test
+    void testThreeComponent() {
+        assertThat(Max.max(5, 1, 16)).isEqualTo(16);
+    }
+
+    @Test
+    void testFourComponent() {
+        assertThat(Max.max(5, 1, 16, 25)).isEqualTo(25);
+    }
 }
