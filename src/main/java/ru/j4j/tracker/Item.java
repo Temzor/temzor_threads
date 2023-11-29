@@ -69,4 +69,13 @@ public class Item {
         result = 31 * result + (created != null ? created.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", created=" + created
+                + '}';
+    }
 }
