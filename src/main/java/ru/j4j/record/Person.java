@@ -1,4 +1,4 @@
-package ru.j4j.tracker;
+package ru.j4j.record;
 
 import java.util.Objects;
 import java.util.StringJoiner;

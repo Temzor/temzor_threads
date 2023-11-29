@@ -1,4 +1,4 @@
-package ru.j4j.tracker;
+package ru.j4j.record;
 
 public class PersonMain {
     public static void main(String[] args) {
