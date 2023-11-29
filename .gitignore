@@ -24,6 +24,7 @@ hs_err_pid*
 
 .idea
 *.iml
+*.yaml
 
 # ignored processed files
 *.attach*
