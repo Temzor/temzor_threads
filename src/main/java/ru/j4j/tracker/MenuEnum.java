@@ -8,7 +8,7 @@ public enum MenuEnum {
     CHANGE_TICKET("Изменить заявку"),
     REMOVE_TICKET("Удалить заявку"),
     FIND_ID_TICKET("Показать заявку по id"),
-    FIND_NAME_TICKET("оказать заявки по имени"),
+    FIND_NAME_TICKET("Показать заявки по имени"),
     EXIT("Завершить программу");
 
     private final String info;
