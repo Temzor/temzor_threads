@@ -1,12 +1,15 @@
 package ru.j4j.oop;
 
-public class Car {
+public class Car extends Transport {
     private String brand;
     private String model;
 
     public Car(String brand, String model) {
         this.brand = brand;
         this.model = model;
+    }
+
+    public Car() {
     }
 
     public void startEngine() {
