@@ -1,11 +1,11 @@
 package ru.j4j.oop;
 
 public class Student {
-    private final String name;
-    private final String surname;
-    private final int age;
-    private final int numberCourse;
-    private final String nameCourse;
+    private  String name;
+    private  String surname;
+    private  int age;
+    private  int numberCourse;
+    private  String nameCourse;
 
     public Student(String name, String surname, int age, int numberCourse, String nameCourse) {
         this.name = name;
@@ -14,6 +14,11 @@ public class Student {
         this.numberCourse = numberCourse;
         this.nameCourse = nameCourse;
     }
+
+    public Student() {
+
+    }
+
 
     public void music() {
         System.out.println("Tra tra tra");
