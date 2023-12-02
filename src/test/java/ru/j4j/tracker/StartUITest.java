@@ -106,7 +106,7 @@ class StartUITest {
         Item two = tracker.add(new Item("testTwo"));
         Input in = new MockInput(
                 new String[] {"0", String.valueOf(one.getId()), "1",
-                        "1", String.valueOf(two.getId()), "2"}
+                        "0", String.valueOf(two.getId()), "1"}
         );
         UserAction[] actions = new UserAction[] {
                 new FindAllAction(out),
@@ -137,8 +137,8 @@ class StartUITest {
         Item two = tracker.add(new Item("testTwo"));
         Input in = new MockInput(
                 new String[] {"0", one.getName(), "1",
-                        "1", two.getName(), "2",
-                        "3", oneDuplicate.getName(), "3"}
+                        "0", two.getName(), "1",
+                        "0", oneDuplicate.getName(), "1"}
         );
         UserAction[] actions = new UserAction[] {
                 new FindByNameAction(out),
@@ -169,8 +169,8 @@ class StartUITest {
         Item two = tracker.add(new Item("testTwo"));
         Input in = new MockInput(
                 new String[] {"0", String.valueOf(one.getId()), "1",
-                        "1", String.valueOf(two.getName()), "2",
-                        "3", String.valueOf(oneDuplicate.getName()), "3"}
+                        "0", String.valueOf(two.getName()), "1",
+                        "0", String.valueOf(oneDuplicate.getName()), "1"}
         );
         UserAction[] actions = new UserAction[] {
                 new FindByIdAction(out),
