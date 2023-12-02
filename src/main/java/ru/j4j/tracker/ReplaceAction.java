@@ -1,6 +1,11 @@
 package ru.j4j.tracker;
 
 public class ReplaceAction implements UserAction {
+    private final Output out;
+
+    public ReplaceAction(Output out) {
+        this.out = out;
+    }
     @Override
     public String name() {
         return MenuEnum.CHANGE_TICKET.getInfo();
@@ -8,13 +13,13 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Изменение названия заявки ===");
+        out.println("=== Изменение названия заявки ===");
         int id = input.askInt("Введите id заявки:");
         Item item = new Item(input.askStr("Введите новое название заявки: "));
         if (tracker.replace(id, item)) {
-            System.out.println("Заявка изменена успешно.");
+            out.println("Заявка изменена успешно.");
         } else {
-            System.out.println("Ошибка замены заявки.");
+            out.println("Ошибка замены заявки.");
         }
         return true;
     }
