@@ -1,9 +1,11 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
 
-public class FindAllAction implements UserAction {
+import ru.j4j.tracker.*;
+
+public class FindAll implements UserAction {
     private final Output out;
 
-    public FindAllAction(Output out) {
+    public FindAll(Output out) {
         this.out = out;
     }
     @Override

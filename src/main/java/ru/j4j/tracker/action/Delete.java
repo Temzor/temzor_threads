@@ -1,9 +1,11 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
 
-public class DeleteAction implements UserAction {
+import ru.j4j.tracker.*;
+
+public class Delete implements UserAction {
     private final Output out;
 
-    public DeleteAction(Output out) {
+    public Delete(Output out) {
         this.out = out;
     }
     @Override

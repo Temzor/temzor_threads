@@ -1,9 +1,11 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
 
-public class FindByNameAction implements UserAction {
+import ru.j4j.tracker.*;
+
+public class FindByName implements UserAction {
     private final Output out;
 
-    public FindByNameAction(Output out) {
+    public FindByName(Output out) {
         this.out = out;
     }
     @Override

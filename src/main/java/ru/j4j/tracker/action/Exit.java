@@ -1,9 +1,14 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
 
-public class ExitAction implements UserAction {
+import ru.j4j.tracker.Input;
+import ru.j4j.tracker.MenuEnum;
+import ru.j4j.tracker.Output;
+import ru.j4j.tracker.Tracker;
+
+public class Exit implements UserAction {
     private final Output out;
 
-    public ExitAction(Output out) {
+    public Exit(Output out) {
         this.out = out;
     }
     @Override

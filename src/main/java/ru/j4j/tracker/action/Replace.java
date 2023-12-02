@@ -1,9 +1,11 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
 
-public class ReplaceAction implements UserAction {
+import ru.j4j.tracker.*;
+
+public class Replace implements UserAction {
     private final Output out;
 
-    public ReplaceAction(Output out) {
+    public Replace(Output out) {
         this.out = out;
     }
     @Override

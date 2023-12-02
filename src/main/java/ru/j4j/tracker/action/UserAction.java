@@ -1,4 +1,7 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.action;
+
+import ru.j4j.tracker.Input;
+import ru.j4j.tracker.Tracker;
 
 public interface UserAction {
     String name();
