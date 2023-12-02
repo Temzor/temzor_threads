@@ -1,8 +1,8 @@
 package ru.j4j.condition;
 
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MaxTest {
     @Test
@@ -28,5 +28,10 @@ class MaxTest {
     @Test
     void testFourComponent() {
         assertThat(Max.max(5, 1, 16, 25)).isEqualTo(25);
+    }
+
+    @Test
+    public void whenNegativeNumber() {
+        assertThat(Max.max(-2, -1)).isEqualTo(-1);
     }
 }
