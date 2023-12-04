@@ -1,6 +1,7 @@
 package ru.j4j.tracker;
 
 import org.junit.jupiter.api.Test;
+import ru.j4j.tracker.model.Item;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

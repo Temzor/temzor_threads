@@ -2,6 +2,11 @@ package ru.j4j.tracker;
 
 import org.junit.jupiter.api.Test;
 import ru.j4j.tracker.action.*;
+import ru.j4j.tracker.input.Input;
+import ru.j4j.tracker.input.MockInput;
+import ru.j4j.tracker.model.Item;
+import ru.j4j.tracker.output.Output;
+import ru.j4j.tracker.output.StubOutput;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

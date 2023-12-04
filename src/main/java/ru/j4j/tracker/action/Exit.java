@@ -1,8 +1,8 @@
 package ru.j4j.tracker.action;
 
-import ru.j4j.tracker.Input;
-import ru.j4j.tracker.MenuEnum;
-import ru.j4j.tracker.Output;
+import ru.j4j.tracker.input.Input;
+import ru.j4j.tracker.model.MenuEnum;
+import ru.j4j.tracker.output.Output;
 import ru.j4j.tracker.Tracker;
 
 public class Exit implements UserAction {

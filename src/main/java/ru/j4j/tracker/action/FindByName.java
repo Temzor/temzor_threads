@@ -1,6 +1,10 @@
 package ru.j4j.tracker.action;
 
 import ru.j4j.tracker.*;
+import ru.j4j.tracker.input.Input;
+import ru.j4j.tracker.model.Item;
+import ru.j4j.tracker.model.MenuEnum;
+import ru.j4j.tracker.output.Output;
 
 public class FindByName implements UserAction {
     private final Output out;

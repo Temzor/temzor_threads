@@ -1,6 +1,10 @@
 package ru.j4j.tracker;
 
 import ru.j4j.tracker.action.*;
+import ru.j4j.tracker.input.Input;
+import ru.j4j.tracker.output.ConsoleOutput;
+import ru.j4j.tracker.output.Output;
+import ru.j4j.validate.ValidateInput;
 
 public class StartUI {
     private final Output out;
@@ -13,11 +17,13 @@ public class StartUI {
         while (run) {
             showMenu(actions);
             int select = input.askInt("Выбрать: ");
+            if (select < 0 || select >= actions.length) {
+                out.println("Неверный ввод, вы можете выбрать: 0 .. " + (actions.length - 1));
+                continue;
+            }
             UserAction action = actions[select];
             run = action.execute(input, tracker);
-
         }
-
     }
 
     private void showMenu(UserAction[] actions) {
@@ -30,7 +36,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new Create(output),

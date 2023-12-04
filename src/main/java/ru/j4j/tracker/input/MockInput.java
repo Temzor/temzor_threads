@@ -1,4 +1,4 @@
-package ru.j4j.tracker;
+package ru.j4j.tracker.input;
 
 public class MockInput implements Input {
     private final String[] answers;
