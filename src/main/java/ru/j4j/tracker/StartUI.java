@@ -1,6 +1,7 @@
 package ru.j4j.tracker;
 
 import ru.j4j.tracker.action.*;
+import ru.j4j.tracker.input.ConsoleInput;
 import ru.j4j.tracker.input.Input;
 import ru.j4j.tracker.output.ConsoleOutput;
 import ru.j4j.tracker.output.Output;
@@ -12,6 +13,7 @@ public class StartUI {
     public StartUI(Output out) {
         this.out = out;
     }
+
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
@@ -36,7 +38,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ValidateInput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new Create(output),
