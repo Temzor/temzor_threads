@@ -3,6 +3,7 @@ package ru.j4j.tracker;
 import ru.j4j.tracker.action.*;
 import ru.j4j.tracker.input.ConsoleInput;
 import ru.j4j.tracker.input.Input;
+import ru.j4j.tracker.logger.Log4File;
 import ru.j4j.tracker.output.ConsoleOutput;
 import ru.j4j.tracker.output.Output;
 import ru.j4j.validate.ValidateInput;
@@ -37,6 +38,9 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Log4File log = Log4File.getInstance();
+        log.add("add new Item");
+        log.save();
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
