@@ -6,6 +6,8 @@ import ru.j4j.tracker.model.Item;
 import ru.j4j.tracker.model.MenuEnum;
 import ru.j4j.tracker.output.Output;
 
+import java.util.List;
+
 public class FindAll implements UserAction {
     private final Output out;
 
@@ -20,8 +22,8 @@ public class FindAll implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Вывод всех заявок ===");
-        Item[] items = tracker.findAll();
-        if (items.length > 0) {
+        List<Item> items = tracker.findAll();
+        if (items.size() > 0) {
             for (Item item : items) {
                 out.println(item);
             }

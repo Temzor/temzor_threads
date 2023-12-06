@@ -2,6 +2,8 @@ package ru.j4j.tracker;
 
 import ru.j4j.tracker.model.Item;
 
+import java.util.List;
+
 public final class SingleTracker {
     private static SingleTracker instance = null;
     private final Tracker tracker = new Tracker();
@@ -21,11 +23,11 @@ public final class SingleTracker {
         return tracker.add(item);
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
