@@ -3,6 +3,7 @@ package ru.j4j.search;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import ru.j4j.search.model.Person;
 
 import java.util.ArrayList;
 

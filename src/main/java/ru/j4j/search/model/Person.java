@@ -1,4 +1,4 @@
-package ru.j4j.search;
+package ru.j4j.search.model;
 
 public class Person {
     private String name;

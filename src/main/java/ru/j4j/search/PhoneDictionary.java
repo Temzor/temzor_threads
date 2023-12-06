@@ -1,5 +1,7 @@
 package ru.j4j.search;
 
+import ru.j4j.search.model.Person;
+
 import java.util.ArrayList;
 
 public class PhoneDictionary {
