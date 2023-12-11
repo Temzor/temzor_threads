@@ -1,7 +1,7 @@
 package ru.j4j.oop;
 
 public class Local {
-    private String name = "Dmitrii";
+    private final String name = "Dmitrii";
 
     public void getFullName() {
         final String surname = "Kapustin";

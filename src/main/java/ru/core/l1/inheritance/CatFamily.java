@@ -1,8 +1,8 @@
 package ru.core.l1.inheritance;
 
 public class CatFamily {
-    private int ears;
-    private int legs;
+    private final int ears;
+    private final int legs;
     private boolean bigClaws;
 
     public CatFamily(int ears, int legs, boolean bigClaws) {

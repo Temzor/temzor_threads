@@ -6,7 +6,7 @@ public enum Status {
     WAITING("Ожидание"),
     FINISHED("Работы завершены");
 
-    private String info;
+    private final String info;
 
     Status(String info) {
         this.info = info;

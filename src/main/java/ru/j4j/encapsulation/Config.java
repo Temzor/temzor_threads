@@ -1,7 +1,7 @@
 package ru.j4j.encapsulation;
 
 public class Config {
-    private String name;
+    private final String name;
     private int position;
     private String[] properties;
 
