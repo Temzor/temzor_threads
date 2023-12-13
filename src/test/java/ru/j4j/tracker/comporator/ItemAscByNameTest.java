@@ -2,11 +2,13 @@ package ru.j4j.tracker.comporator;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import ru.j4j.tracker.model.Item;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 class ItemAscByNameTest {
 
