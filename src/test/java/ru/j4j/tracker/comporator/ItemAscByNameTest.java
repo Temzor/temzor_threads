@@ -14,7 +14,6 @@ class ItemAscByNameTest {
 
     @Test
     void compareAscItem() {
-        ItemAscByName itemAscByName = new ItemAscByName();
         List<Item> result = new ArrayList<>(List.of(
                 new Item("abc"),
                 new Item("gjk"),
@@ -27,6 +26,6 @@ class ItemAscByNameTest {
                 new Item("gjk")
         );
         result.sort(new ItemAscByName());
-        assertThat(result).containsAll(expect);
+        assertThat(result).isEqualTo(expect);
     }
 }
