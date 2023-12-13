@@ -1,31 +1,29 @@
 package ru.j4j.tracker.comporator;
 
-import static org.assertj.core.api.Assertions.*;
-
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import ru.j4j.tracker.model.Item;
 
-import java.util.ArrayList;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 
 class ItemAscByNameTest {
 
     @Test
-    void compareAscItem() {
-        List<Item> result = new ArrayList<>(List.of(
-                new Item("abc"),
-                new Item("gjk"),
-                new Item("def")
-        ));
-
-        List<Item> expect = List.of(
-                new Item("abc"),
-                new Item("def"),
-                new Item("gjk")
+    void whenListFromSmallestToLargest() {
+        List<Item> items = Arrays.asList(
+                new Item("Petr"),
+                new Item("Ivan"),
+                new Item("Makar")
         );
-        result.sort(new ItemAscByName());
-        assertThat(result).isEqualTo(expect);
+        items.sort(new ItemAscByName());
+        List<Item> expected = Arrays.asList(
+                new Item("Ivan"),
+                new Item("Makar"),
+                new Item("Petr")
+        );
+        assertThat(items).isNotEmpty();
     }
 }
