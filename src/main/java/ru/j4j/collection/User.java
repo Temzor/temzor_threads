@@ -2,10 +2,12 @@ package ru.j4j.collection;
 
 import java.util.Objects;
 
-public class User implements Comparable<User> {
-    private String name;
+import static java.lang.Integer.compare;
 
-    private int age;
+public class User implements Comparable<User> {
+    private final String name;
+
+    private final int age;
 
     public User(String name, int age) {
         this.name = name;
@@ -14,19 +16,10 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        if (name.equals(o.name)) {
-            if (age == o.age) {
-                return 0;
-            } else if (age > o.age) {
-                return -1;
-            } else {
-                return 1;
-            }
-        } else if (age > o.age) {
-            return -1;
-        } else {
-            return 1;
+        if (this.name.compareTo(o.name) == 0) {
+            return compare(age, o.age);
         }
+        return name.compareTo(o.name) < 0 ? -1 : 1;
     }
 
     @Override
