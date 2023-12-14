@@ -4,70 +4,69 @@ import java.util.*;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
-        double score = 0.0;
-        int totalPoints = 0;
+        int number = 0;
+        double mark = 0;
         for (Pupil pupil : pupils) {
-            for (Subject sub : pupil.subjects()) {
-                totalPoints += sub.score();
-                score++;
+            for (Subject subject : pupil.subjects()) {
+                mark += subject.score();
+                number++;
             }
         }
-        return totalPoints / score;
+        return number > 0 ? mark / number : 0;
     }
 
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
-        List<Label> score = new ArrayList<>();
-        for (Pupil pupil : pupils) {
-            int scoreSum = 0;
-            for (Subject sub : pupil.subjects()) {
-                scoreSum += sub.score();
-            }
-            score.add(new Label(pupil.name(), (double) scoreSum / pupils.size()));
-        }
-        return score;
+        return scoreByPupil(pupils, true);
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        HashMap<String, Integer> score = new LinkedHashMap<>();
-        for (Pupil pupil : pupils) {
-            for (Subject subject : pupil.subjects()) {
-                score.put(subject.name(), score.getOrDefault(subject.name(), 0)
-                        + subject.score());
-            }
-        }
-        List<Label> label = new ArrayList<>();
-        for (String key : score.keySet()) {
-            label.add(new Label(key, (double) score.get(key) / pupils.size()));
-        }
-        return label;
+        return scoreBySubject(pupils, true);
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
-        List<Label> score = new ArrayList<>();
-        for (Pupil pupil : pupils) {
-            int scoreSum = 0;
-            for (Subject sub : pupil.subjects()) {
-                scoreSum += sub.score();
-            }
-            score.add(new Label(pupil.name(), scoreSum));
-        }
-        score.sort(Comparator.naturalOrder());
-        return score.get(score.size() - 1);
+        List<Label> labels = scoreByPupil(pupils, false);
+        labels.sort(Comparator.naturalOrder());
+        return labels.get(labels.size() - 1);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        HashMap<String, Integer> score = new LinkedHashMap<>();
+        List<Label> labels = scoreBySubject(pupils, false);
+        labels.sort(Comparator.naturalOrder());
+        return labels.get(labels.size() - 1);
+    }
+
+    private static List<Label> scoreByPupil(List<Pupil> pupils, boolean averageScore) {
+        List<Label> labels = new ArrayList<>();
+        int number = 0;
+        double mark = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                score.put(subject.name(), score.getOrDefault(subject.name(), 0)
-                        + subject.score());
+                mark += subject.score();
+                number++;
+            }
+            number = averageScore ? number : 1;
+            labels.add(new Label(pupil.name(), number > 0 ? mark / number : 0));
+            number = 0;
+            mark = 0;
+        }
+        return labels;
+    }
+
+    private static List<Label> scoreBySubject(List<Pupil> pupils, boolean averageScore) {
+        List<Label> labels = new ArrayList<>();
+        Map<String, Integer> subjectMap = new HashMap<>();
+        for (Pupil pupil : pupils) {
+            for (Subject subject : pupil.subjects()) {
+                subjectMap.put(subject.name(), subjectMap.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
-        List<Label> label = new ArrayList<>();
-        for (String key : score.keySet()) {
-            label.add(new Label(key, (double) score.get(key)));
+        for (Map.Entry<String, Integer> subjectScores : subjectMap.entrySet()) {
+            if (averageScore) {
+                labels.add(new Label(subjectScores.getKey(), (double) subjectScores.getValue() / pupils.size()));
+            } else {
+                labels.add(new Label(subjectScores.getKey(), subjectScores.getValue()));
+            }
         }
-        label.sort(Comparator.naturalOrder());
-        return label.get(score.size() - 1);
+        return labels;
     }
 }

@@ -1,7 +1,7 @@
 package ru.j4j.poly;
 
 public class MemStore implements Store {
-    private String[] mem = new String[100];
+    private final String[] mem = new String[100];
     private int size = 0;
 
     @Override

@@ -35,7 +35,7 @@ public class Car extends Transport {
     public class TripComputer {
 
         public String tripData = "Бортовой компьютер";
-        private String model = "Модель TripComputer";
+        private final String model = "Модель TripComputer";
 
         public void getInfo() {
             System.out.println("Модель TripComputer: " + this.model);

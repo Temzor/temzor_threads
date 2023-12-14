@@ -1,7 +1,7 @@
 package ru.j4j.poly;
 
 public class Service {
-    private Store store;
+    private final Store store;
 
     public Service(Store store) {
         this.store = store;

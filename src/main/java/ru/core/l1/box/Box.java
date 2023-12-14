@@ -1,9 +1,9 @@
 package ru.core.l1.box;
 
 public class Box {
-    private double width;
-    private double height;
-    private double length;
+    private final double width;
+    private final double height;
+    private final double length;
 
     public Box(double width, double height, double length) {
         this.width = width;

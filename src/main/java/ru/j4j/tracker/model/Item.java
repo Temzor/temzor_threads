@@ -67,7 +67,7 @@ public class Item {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (created != null ? created.hashCode() : 0);
+        result = 31 * result + created.hashCode();
         return result;
     }
 
@@ -79,4 +79,6 @@ public class Item {
                 + ", created=" + created.format(FORMATTER)
                 + '}';
     }
+
+
 }

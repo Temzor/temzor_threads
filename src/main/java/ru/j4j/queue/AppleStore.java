@@ -23,7 +23,7 @@ public class AppleStore {
         for (int index = 0; index < count; index++) {
             queue.poll();
         }
-        return queue.peek() != null ? queue.peek().name() : null;
+        return queue.peek().name();
     }
 }
 

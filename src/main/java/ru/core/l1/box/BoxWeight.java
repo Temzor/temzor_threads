@@ -1,7 +1,7 @@
 package ru.core.l1.box;
 
 public class BoxWeight extends Box {
-    private double weight;
+    private final double weight;
 
     public BoxWeight(double width, double height, double length, double weight) {
         super(width, height, length);

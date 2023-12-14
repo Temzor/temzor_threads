@@ -5,10 +5,7 @@ public class User {
     private int age;
 
     public boolean canDrive() {
-        boolean can = false;
-        if (age >= 18) {
-            can = true;
-        }
+        boolean can = age >= 18;
         return can;
     }
 }

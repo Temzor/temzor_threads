@@ -3,9 +3,9 @@ package ru.j4j.oop;
 import static java.lang.Math.*;
 
 public class Triangle {
-    private Point ab;
-    private Point bc;
-    private Point ca;
+    private final Point ab;
+    private final Point bc;
+    private final Point ca;
 
     public Triangle(Point ab, Point bc, Point ca) {
         this.ab = ab;
