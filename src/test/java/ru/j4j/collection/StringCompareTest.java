@@ -1,14 +1,14 @@
 package ru.j4j.collection;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class StringCompareTest {
     @Test
     public void whenStringsAreEqualThenZero() {
-        StringCompare compare = new StringCompare();
-        int result = compare.compare(
+        StringCompare stringCompare = new StringCompare();
+        int result = stringCompare.compare(
                 "Ivanov",
                 "Ivanov"
         );
