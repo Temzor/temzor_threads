@@ -11,4 +11,23 @@ public class LexSort implements Comparator<String> {
         int rightInt = Integer.parseInt(rightSplit[0]);
         return Integer.compare(leftInt, rightInt);
     }
+
+    private int[] values;
+
+    public int[] sort(int[] values) {
+        this.values = values;
+        return values;
+    }
+
+    public void echo() {
+        System.out.println(this.values[0]);
+    }
+
+    public static void main(String[] args) {
+        LexSort ar = new LexSort();
+        final int[] immutable = {1};
+        final int[] ri = ar.sort(immutable);
+        ri[0] = -1;
+        ar.echo();
+    }
 }
