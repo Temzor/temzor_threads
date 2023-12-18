@@ -2,31 +2,42 @@ package ru.j4j.bank;
 
 import java.util.Objects;
 
-public class User {
-    private String passport;
-    private String username;
+/**
+ * Класс описывает модель класса POJO User
+ *
+ * @author DMITRII KAPUSTIN
+ * @version 1.0
+ */
 
+public class User {
+    /**
+     * Хранение паспортных данных пользователя
+     */
+    private final String passport;
+    /**
+     * Хранение данных пользователя (login)
+     */
+    private final String username;
+
+    /**
+     * Конструктор POJO МД User
+     */
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
     }
 
+    /**
+     * Блок getter и setter
+     */
+
     public String getPassport() {
         return passport;
     }
 
-    public void setPassport(String passport) {
-        this.passport = passport;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
+    /**
+     * Контрактные методы(equals и hashCode) для сравнения объектов класса Account
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -42,5 +53,9 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(passport);
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
