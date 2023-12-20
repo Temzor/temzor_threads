@@ -3,6 +3,7 @@ package ru.j4j.search;
 import ru.j4j.search.model.Person;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class PhoneDictionary {
     private final ArrayList<Person> persons = new ArrayList<>();
@@ -13,9 +14,13 @@ public class PhoneDictionary {
 
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
-        for (Person p : persons) {
-            if (p.toString().contains(key)) {
-                result.add(p);
+        Predicate<Person> combine = person -> person.getName().contains(key)
+                || person.getSurName().contains(key)
+                || person.getPhone().contains(key)
+                || person.getAddress().contains(key);
+        for (Person person : persons) {
+            if (combine.test(person)) {
+                result.add(person);
             }
         }
         return result;
