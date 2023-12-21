@@ -1,9 +1,6 @@
 package ru.j4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Класс описывает работу сервиса Банка с моделями данных
@@ -149,5 +146,22 @@ public class BankService {
 
     public List<Account> getAccounts(User user) {
         return users.get(user);
+    }
+
+    public User userP(String passport) {
+        User user = null;
+        for (User element : users.keySet()) {
+            if (passport.equals(element.getPassport())) {
+                user = element;
+                break;
+            }
+        }
+        return user;
+    }
+
+    public Optional<User> optionalUser(String passport) {
+        return users.keySet().stream()
+                .filter(it -> passport.equals(it.getPassport()))
+                .findFirst();
     }
 }
