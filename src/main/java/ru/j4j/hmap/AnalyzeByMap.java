@@ -20,7 +20,12 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        return scoreBySubject(pupils, true);
+        List<Label> labelList = new ArrayList<>();
+        Map<String, Integer> stringIntegerMap = scoreBySubject(pupils);
+        for (String subject : stringIntegerMap.keySet()) {
+            labelList.add(new Label(subject, (double) stringIntegerMap.get(subject) / pupils.size()));
+        }
+        return labelList;
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
@@ -30,9 +35,13 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        List<Label> labels = scoreBySubject(pupils, false);
-        labels.sort(Comparator.naturalOrder());
-        return labels.get(labels.size() - 1);
+        List<Label> labelList = new ArrayList<>();
+        Map<String, Integer> temp = scoreBySubject(pupils);
+        for (String subject : temp.keySet()) {
+            labelList.add(new Label(subject, temp.get(subject)));
+        }
+        labelList.sort(Comparator.naturalOrder());
+        return labelList.get(labelList.size() - 1);
     }
 
     private static List<Label> scoreByPupil(List<Pupil> pupils, boolean averageScore) {
@@ -52,21 +61,17 @@ public class AnalyzeByMap {
         return labels;
     }
 
-    private static List<Label> scoreBySubject(List<Pupil> pupils, boolean averageScore) {
-        List<Label> labels = new ArrayList<>();
-        Map<String, Integer> subjectMap = new HashMap<>();
+    private static Map<String, Integer> scoreBySubject(List<Pupil> pupils) {
+        Map<String, Integer> subjectMap = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                subjectMap.put(subject.name(), subjectMap.getOrDefault(subject.name(), 0) + subject.score());
+               subjectMap.merge(
+                       subject.name(),
+                       subject.score(),
+                       (oldScore, newScore) -> oldScore + subject.score()
+               );
             }
         }
-        for (Map.Entry<String, Integer> subjectScores : subjectMap.entrySet()) {
-            if (averageScore) {
-                labels.add(new Label(subjectScores.getKey(), (double) subjectScores.getValue() / pupils.size()));
-            } else {
-                labels.add(new Label(subjectScores.getKey(), subjectScores.getValue()));
-            }
-        }
-        return labels;
+        return subjectMap;
     }
 }
