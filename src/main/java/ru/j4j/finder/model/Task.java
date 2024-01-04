@@ -1,4 +1,4 @@
-package ru.j4j.search.model;
+package ru.j4j.finder.model;
 
 public class Task {
     private final String desc;

@@ -1,6 +1,6 @@
-package ru.j4j.search;
+package ru.j4j.finder;
 
-import ru.j4j.search.model.Task;
+import ru.j4j.finder.model.Task;
 
 import java.util.LinkedList;
 

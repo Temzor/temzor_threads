@@ -1,6 +1,6 @@
-package ru.j4j.search;
+package ru.j4j.finder;
 
-import ru.j4j.search.model.Person;
+import ru.j4j.finder.model.Person;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;

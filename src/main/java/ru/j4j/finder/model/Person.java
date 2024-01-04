@@ -1,5 +1,8 @@
-package ru.j4j.search.model;
+package ru.j4j.finder.model;
 
+import lombok.Getter;
+
+@Getter
 public class Person {
     private String name;
     private final String surName;
@@ -11,26 +14,6 @@ public class Person {
         this.surName = surName;
         this.phone = phone;
         this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurName() {
-        return surName;
     }
 
     @Override

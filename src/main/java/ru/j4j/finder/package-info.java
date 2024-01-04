@@ -5,4 +5,4 @@
  * @version 1.0.0
  */
 @Deprecated
-package ru.j4j.search;
+package ru.j4j.finder;
