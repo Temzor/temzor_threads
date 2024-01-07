@@ -19,7 +19,6 @@ public class College {
                 .findFirst()
                 .orElse(null));
     }
-
     public Optional<Subject> findBySubjectName(String account, String name) {
         Optional<Student> student = findByAccount(account);
         if (student.isPresent()) {
