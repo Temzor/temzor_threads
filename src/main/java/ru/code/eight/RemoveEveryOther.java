@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class RemoveEveryOther {
     public static Object[] removeEveryOther(Object[] array) {

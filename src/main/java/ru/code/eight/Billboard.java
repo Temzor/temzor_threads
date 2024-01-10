@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Billboard {
     public static int billboard(String name, int price) {

@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Even {
     public boolean isEven(double n) {

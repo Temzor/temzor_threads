@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class DetermineSex {
     public static String chromosomeCheck(String sperm) {

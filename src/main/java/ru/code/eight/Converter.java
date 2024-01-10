@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Converter {
     public static int binToDecimal(String inp) {

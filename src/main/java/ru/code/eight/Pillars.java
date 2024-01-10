@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Pillars {
     public static int pillars(int numPill, int dist, int width) {

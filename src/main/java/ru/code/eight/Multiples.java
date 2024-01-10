@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Multiples {
     public static int[] find(int base, int limit) {

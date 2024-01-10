@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.eight.Survive;
+import ru.code.eight.Survive;
 
 class SurviveTest {
     @Test @DisplayName("A true hero")

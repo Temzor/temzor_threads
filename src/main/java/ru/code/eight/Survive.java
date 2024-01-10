@@ -1,4 +1,4 @@
-package ru.eight;
+package ru.code.eight;
 
 public class Survive {
     public static boolean hero(int bullets, int dragons) {
