@@ -66,16 +66,6 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
             <version>3.2.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-common</artifactId>
-            <version>2.2.0</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -87,11 +77,30 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>3.6.3</version>
         </dependency>
-    </dependencies><pluginRepositories>
-    <pluginRepository>
-        <id>redgate</id>
-        <url>https://download.red-gate.com/maven/release</url>
-    </pluginRepository>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>6.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>6.1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.2</version>
+        </dependency>
+    </dependencies>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>redgate</id>
+            <url>https://download.red-gate.com/maven/release</url>
+        </pluginRepository>
     </pluginRepositories>
     <build>
         <plugins>
