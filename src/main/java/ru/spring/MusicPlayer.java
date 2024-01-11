@@ -1,13 +1,22 @@
 package ru.spring;
 
-public class MusicPlayer {
-    private Music music;
+import lombok.Getter;
+import lombok.Setter;
 
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+@Setter
+@Getter
+public class MusicPlayer {
+    private List<Music> musics = new ArrayList<>();
+
+    private String name;
+    private int volume;
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        for (Music music : musics) {
+            System.out.println("Playing: " + music.getSong());
+        }
     }
 }

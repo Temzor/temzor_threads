@@ -2,17 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="musicBean"
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="classicalMusic"
           class="ru.spring.ClassicalMusic">
+    </bean>
+
+    <bean id="rockMusic"
+          class="ru.spring.RockMusic">
     </bean>
 
     <bean id="musicPlayer"
           class="ru.spring.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="musics">
+            <list>
+                <ref bean="rockMusic"/>
+                <ref bean="classicalMusic"/>
+            </list>
+        </property>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 </beans>
