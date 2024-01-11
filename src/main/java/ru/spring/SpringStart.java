@@ -8,8 +8,9 @@ public class SpringStart {
                 "applicationContext.xml"
         );
 
-        BeanStart beanStart = context.getBean("beanStart", BeanStart.class);
-        System.out.println(beanStart.getName());
+        Music music = context.getBean("musicBean", Music.class);
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
 
         context.close();
     }
