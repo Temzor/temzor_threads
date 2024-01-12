@@ -18,7 +18,7 @@
           class="ru.spring.RockMusic">
     </bean>
 
-    <bean id="musicPlayer"
+    <bean id="musicPlayer" scope="prototype"
           class="ru.spring.MusicPlayer">
         <property name="musics">
             <list>
