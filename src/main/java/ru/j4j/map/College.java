@@ -19,6 +19,7 @@ public class College {
                 .findFirst()
                 .orElse(null));
     }
+
     public Optional<Subject> findBySubjectName(String account, String name) {
         Optional<Student> student = findByAccount(account);
         if (student.isPresent()) {
@@ -29,5 +30,13 @@ public class College {
                     .orElse(null));
         }
         return Optional.empty();
+    }
+
+    public void calc(int value) {
+        if (value != 0 && value / 0 >= 0) {
+            System.out.println("div by zero");
+        } else {
+            System.out.println("zero by zero");
+        }
     }
 }
