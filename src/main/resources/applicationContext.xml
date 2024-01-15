@@ -10,27 +10,5 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="classicalMusic"
-          class="ru.spring.ClassicalMusic"
-          init-method="classicalMusicBeanInit"
-          destroy-method="classicalMusicBeanDestroy"
-          factory-method="getInstance">
-    </bean>
-
-    <bean id="rockMusic"
-          class="ru.spring.RockMusic">
-    </bean>
-
-    <bean id="musicPlayer" scope="prototype"
-          class="ru.spring.MusicPlayer">
-        <property name="musics">
-            <list>
-                <ref bean="rockMusic"/>
-                <ref bean="classicalMusic"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    <context:component-scan base-package="ru.spring"/>
 </beans>

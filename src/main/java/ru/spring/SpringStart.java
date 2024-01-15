@@ -7,14 +7,11 @@ public class SpringStart {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        MusicPlayer musicPlayerSingle = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        Music classicalMusic = context.getBean("classicalMusic", Music.class);
+        System.out.println(classicalMusic.getSong());
 
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
-
-        System.out.println("Is singleton (scope default singleton): " + (musicPlayer == musicPlayerSingle));
+        Music rockMusic = context.getBean("rockMusic", Music.class);
+        System.out.println(rockMusic.getSong());
 
         context.close();
     }
