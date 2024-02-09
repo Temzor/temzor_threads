@@ -1,11 +1,9 @@
 package ru.code.seven;
 
+import static java.util.stream.IntStream.iterate;
+
 public class SequenceSum {
     public static int sequenceSum(int start, int end, int step) {
-        int sum = 0;
-        for (int i = start; i <= end; i += step) {
-            sum += i;
-        }
-        return sum;
+        return iterate(start, i -> i <= end, i -> i + step).sum();
     }
 }
