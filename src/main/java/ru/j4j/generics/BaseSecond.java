@@ -1,4 +1,10 @@
 package ru.j4j.generics;
 
-public record BaseSecond(String id) {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
+public class BaseSecond {
+    private final String id;
 }

@@ -1,9 +1,14 @@
 package ru.j4j.generics;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
+
 @Getter
-public record UserSecond(String userName) {
+public class UserSecond extends BaseSecond {
+    private final String username;
+
+    public UserSecond(String id, String username) {
+        super(id);
+        this.username = username;
+    }
 }
