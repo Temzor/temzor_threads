@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class ReflectionsTest {
     @Test
-    void WhenBasicTest() {
+    void whenBasicTest() {
 
         assertThat(new int[]{2, 2}).isEqualTo(Reflections.reflectPoint(new int[]{0, 0}, new int[]{1, 1}));
         assertThat(new int[]{-6, -18}).isEqualTo(Reflections.reflectPoint(new int[]{2, 6}, new int[]{-2, -6}));
