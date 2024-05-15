@@ -1,7 +1,13 @@
 package ru.code.eight;
 
 public class BasicOperations {
-    public static Integer basicMath(String op, int v1, int v2) {
-        return op.equals("+") ? v1 + v2 : op.equals("-") ? v1 - v2 : op.equals("*") ? v1 * v2 : v1 / v2;
+    public static Integer basicMath(String op, int x, int y) {
+        return switch (op) {
+            case "+" -> x + y;
+            case "-" -> x - y;
+            case "*" -> x * y;
+            case "/" -> x / y;
+            default -> 0;
+        };
     }
 }
