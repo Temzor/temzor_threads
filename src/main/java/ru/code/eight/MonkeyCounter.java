@@ -1,11 +1,9 @@
 package ru.code.eight;
 
+import java.util.stream.IntStream;
+
 public class MonkeyCounter {
     public static int[] monkeyCount(final int n) {
-        int[] monkeys = new int[n];
-        for (int i = 0; i < n; i++) {
-            monkeys[i] = i + 1;
-        }
-        return monkeys;
+        return IntStream.rangeClosed(1, n).toArray();
     }
 }
