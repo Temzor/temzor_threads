@@ -1,15 +1,13 @@
 package ru.code.eight;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class Stringy {
     public static String stringy(int size) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < size; i++) {
-            if (i % 2 == 0) {
-                result.append("1");
-            } else if (i % 2 != 0) {
-                result.append("0");
-            }
-        }
-        return result.toString();
+        return IntStream.rangeClosed(1, size)
+                .map(i -> i % 2)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(""));
     }
 }
