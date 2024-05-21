@@ -4,8 +4,8 @@ public class IncrementTwoCountersSynchronizedOnObjectDemo {
     static Integer counter = 0;
     static Integer anotherCounter = 0;
 
-    private static final Object counterLock = new Object();
-    private static final Object anotherCounterLock = new Object();
+    private static final Object COUNTER_LOCK = new Object();
+    private static final Object ANOTHER_COUNTER_LOCK = new Object();
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
@@ -38,13 +38,13 @@ public class IncrementTwoCountersSynchronizedOnObjectDemo {
     }
 
     private static void incrementCounter() {
-        synchronized (counterLock) {
+        synchronized (COUNTER_LOCK) {
             counter++;
         }
     }
 
     private static void incrementAnotherCounter() {
-        synchronized (anotherCounterLock) {
+        synchronized (ANOTHER_COUNTER_LOCK) {
             anotherCounter++;
         }
     }
