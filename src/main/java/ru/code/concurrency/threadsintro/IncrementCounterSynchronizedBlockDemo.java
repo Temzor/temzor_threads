@@ -1,6 +1,7 @@
 package ru.code.concurrency.threadsintro;
 
 public class IncrementCounterSynchronizedBlockDemo {
+
     static Integer counter = 0;
     static Integer anotherCounter = 0;
 
