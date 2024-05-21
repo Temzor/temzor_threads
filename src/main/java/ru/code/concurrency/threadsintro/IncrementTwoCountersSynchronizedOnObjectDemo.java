@@ -1,19 +1,24 @@
 package ru.code.concurrency.threadsintro;
 
-public class IncrementCounterUnsafeDemo {
+public class IncrementTwoCountersSynchronizedOnObjectDemo {
     static Integer counter = 0;
+    static Integer anotherCounter = 0;
+
+    private static final Object counterLock = new Object();
+    private static final Object anotherCounterLock = new Object();
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
+
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                increment();
+            for (int i = 0; i < 1_000_000; i++) {
+                incrementCounter();
             }
         });
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
-                increment();
+            for (int i = 0; i < 1_000_000; i++) {
+                incrementAnotherCounter();
             }
         });
 
@@ -32,7 +37,16 @@ public class IncrementCounterUnsafeDemo {
         System.out.println("Time elapsed: " + duration);
     }
 
-    private static void increment() {
-        counter++;
+    private static void incrementCounter() {
+        synchronized (counterLock) {
+            counter++;
+        }
+    }
+
+    private static void incrementAnotherCounter() {
+        synchronized (anotherCounterLock) {
+            anotherCounter++;
+        }
     }
 }
+
