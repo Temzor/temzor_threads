@@ -3,7 +3,7 @@ package ru.code.concurrency.threadsintro;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class AtomicLongDemo {
-    private static final AtomicLong atomicLongCounter = new AtomicLong(0);
+    private static final AtomicLong ATOMIC_LONG_COUNTER = new AtomicLong(0);
 
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {
@@ -28,10 +28,10 @@ public class AtomicLongDemo {
             throw new RuntimeException(e);
         }
 
-        System.out.println("atomicLongCounter: " + atomicLongCounter.get());
+        System.out.println("atomicLongCounter: " + ATOMIC_LONG_COUNTER.get());
     }
 
     private static void incrementAtomicLong() {
-        atomicLongCounter.incrementAndGet();
+        ATOMIC_LONG_COUNTER.incrementAndGet();
     }
 }

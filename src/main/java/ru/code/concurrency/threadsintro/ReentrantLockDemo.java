@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ReentrantLockDemo {
     private static Integer counter = 0;
-    private static final Lock counterLock = new ReentrantLock();
+    private static final Lock COUNTER_LOCK = new ReentrantLock();
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
@@ -40,8 +40,8 @@ public class ReentrantLockDemo {
 
 
     private static void incrementCounter() {
-        counterLock.lock();
+        COUNTER_LOCK.lock();
         counter++;
-        counterLock.unlock();
+        COUNTER_LOCK.unlock();
     }
 }
