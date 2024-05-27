@@ -65,5 +65,4 @@ class X2Test {
 
         assertThat(result).isEqualTo(expected);
     }
-
 }
