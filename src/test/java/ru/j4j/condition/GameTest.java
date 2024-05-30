@@ -22,4 +22,10 @@ class GameTest {
         assertThat(Game.menu("battle toads and double dragon"))
                 .isEqualTo("I do not know what start.");
     }
+
+    @Test
+    void whenNullThenThenIDNTKN() {
+        assertThat(Game.menu(null))
+                .isEqualTo("I do not know what start.");
+    }
 }
