@@ -38,50 +38,50 @@ class MortgageImplTest {
     }
 
     @Test
-    void whenPrincipalAndPaymentPositive_thenCalculateYearsSuccessfully() {
+    void whenPrincipalAndPaymentPositiveThenCalculateYearsSuccessfully() {
         assertThat(MortgageImpl.calculateYears(100_000, 12_000, 5)).isPositive();
     }
 
     @Test
-    void whenAnnualInterestRateZero_thenCalculateYearsAsExpected() {
+    void whenAnnualInterestRateZeroThenCalculateYearsAsExpected() {
         assertThat(MortgageImpl.calculateYears(100_000, 25_000, 0)).isEqualTo(4);
     }
 
     @Test
-    void whenExactPaymentForNoInterest_thenCalculateYearsToOne() {
+    void whenExactPaymentForNoInterestThenCalculateYearsToOne() {
         assertThat(MortgageImpl.calculateYears(10_000, 10_000, 0)).isOne();
     }
 
     @Test
-    void whenNegativePrincipal_thenThrowIllegalArgumentException() {
+    void whenNegativePrincipalThenThrowIllegalArgumentException() {
         assertThatThrownBy(() -> MortgageImpl.calculateYears(-100_000, 10_000, 5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Некорректные входные данные");
     }
 
     @Test
-    void whenNegativeAnnualPayment_thenThrowIllegalArgumentException() {
+    void whenNegativeAnnualPaymentThenThrowIllegalArgumentException() {
         assertThatThrownBy(() -> MortgageImpl.calculateYears(100_000, -10_000, 5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Некорректные входные данные");
     }
 
     @Test
-    void whenNegativeInterestRate_thenThrowIllegalArgumentException() {
+    void whenNegativeInterestRateThenThrowIllegalArgumentException() {
         assertThatThrownBy(() -> MortgageImpl.calculateYears(100_000, 10_000, -5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Некорректные входные данные");
     }
 
     @Test
-    void whenPrincipalIsZero_thenThrowIllegalArgumentException() {
+    void whenPrincipalIsZeroThenThrowIllegalArgumentException() {
         assertThatThrownBy(() -> MortgageImpl.calculateYears(0, 10_000, 5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Некорректные входные данные");
     }
 
     @Test
-    void whenPaymentZero_thenThrowIllegalArgumentException() {
+    void whenPaymentZeroThenThrowIllegalArgumentException() {
         assertThatThrownBy(() -> MortgageImpl.calculateYears(100_000, 0, 5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Некорректные входные данные");
