@@ -18,5 +18,11 @@ public class Board {
         paint(3, 3);
         System.out.println();
         paint(4, 4);
+        System.out.println();
+        paint(5, 5);
+        System.out.println();
+        paint(6, 6);
+        System.out.println();
+        paint(8, 8);
     }
 }
