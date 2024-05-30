@@ -1,6 +1,7 @@
 package ru.j4j.loop;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,5 +40,27 @@ class FitnessTest {
         int result = Fitness.calc(ivan, nik);
         int expected = 1;
         assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenIvan50Nik90Then3() {
+        assertThat(2).isEqualTo(Fitness.calc(50, 90));
+    }
+
+    @Test
+    public void whenIvan90Nik90Then1() {
+        assertThat(1).isEqualTo(Fitness.calc(90, 90));
+    }
+
+    @Test
+    public void whenIvan100Nik50Then0() {
+        assertThat(0).isEqualTo(Fitness.calc(100, 50));
+    }
+
+    @Test
+    public void whenNegativeStrengthThenException() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> Fitness.calc(-50, 90));
+        assertThat("Strength values must be non-negative").isEqualTo(exception.getMessage());
     }
 }
