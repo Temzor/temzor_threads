@@ -13,7 +13,10 @@ public class ArrayDefinition {
 
         for (int i = 0; i < names.length; i++) {
             names[i] = "Ive " + i;
-            System.out.println(names[i]);
+        }
+
+        for(String s: names) {
+            System.out.println(s);
         }
     }
 }
