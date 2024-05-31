@@ -36,4 +36,70 @@ class SkipNegativeTest {
         };
         assertThat(result).isDeepEqualTo(expected);
     }
+
+    @Test
+    public void whenAllPositive() {
+        int[][] input = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+        int[][] result = SkipNegative.skip(input);
+        int[][] expected = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenContainsNegative() {
+        int[][] input = {
+                {1, -2, 3},
+                {4, -5, 6}
+        };
+        int[][] result = SkipNegative.skip(input);
+        int[][] expected = {
+                {1, 0, 3},
+                {4, 0, 6}
+        };
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenAllNegative() {
+        int[][] input = {
+                {-1, -2, -3},
+                {-4, -5, -6}
+        };
+        int[][] result = SkipNegative.skip(input);
+        int[][] expected = {
+                {0, 0, 0},
+                {0, 0, 0}
+        };
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenMixed() {
+        int[][] input = {
+                {1, -2, 3},
+                {-4, 0, 6},
+                {7, -8, -9}
+        };
+        int[][] result = SkipNegative.skip(input);
+        int[][] expected = {
+                {1, 0, 3},
+                {0, 0, 6},
+                {7, 0, 0}
+        };
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenEmpty() {
+        int[][] input = {};
+        int[][] result = SkipNegative.skip(input);
+        int[][] expected = {};
+        assertThat(result).isEqualTo(expected);
+    }
 }
