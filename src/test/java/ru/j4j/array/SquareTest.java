@@ -22,31 +22,31 @@ class SquareTest {
     }
 
     @Test
-    public void whenBoundIs0_thenReturnEmptyArray() {
+    public void whenBoundIs0ThenReturnEmptyArray() {
         int[] result = Square.calculateSquare(0);
         assertThat(result).isEmpty();
     }
 
     @Test
-    public void whenBoundIs1_thenReturnArrayWithSingleElement0() {
+    public void whenBoundIs1ThenReturnArrayWithSingleElement0() {
         int[] result = Square.calculateSquare(1);
         assertThat(result).containsExactly(0);
     }
 
     @Test
-    public void whenBoundIs2_thenReturnArrayWithElements0And1() {
+    public void whenBoundIs2ThenReturnArrayWithElements0And1() {
         int[] result = Square.calculateSquare(2);
         assertThat(result).containsExactly(0, 1);
     }
 
     @Test
-    public void whenBoundIs5_thenReturnArrayWithElements0To16() {
+    public void whenBoundIs5ThenReturnArrayWithElements0To16() {
         int[] result = Square.calculateSquare(5);
         assertThat(result).containsExactly(0, 1, 4, 9, 16);
     }
 
     @Test
-    public void whenBoundIs10_thenReturnArrayWithCorrectSquares() {
+    public void whenBoundIs10ThenReturnArrayWithCorrectSquares() {
         int[] result = Square.calculateSquare(10);
         assertThat(result).containsExactly(0, 1, 4, 9, 16, 25, 36, 49, 64, 81);
     }

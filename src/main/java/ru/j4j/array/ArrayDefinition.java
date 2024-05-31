@@ -15,7 +15,7 @@ public class ArrayDefinition {
             names[i] = "Ive " + i;
         }
 
-        for(String s: names) {
+        for (String s : names) {
             System.out.println(s);
         }
     }

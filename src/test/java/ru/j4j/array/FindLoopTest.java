@@ -59,56 +59,56 @@ class FindLoopTest {
     }
 
     @Test
-    public void whenElementFound_thenReturnIndex() {
+    public void whenElementFoundThenReturnIndex() {
         int[] data = {5, 10, 3, 7};
         int result = FindLoop.indexOf(data, 10);
         assertThat(result).isEqualTo(1);
     }
 
     @Test
-    public void whenElementNotFound_thenReturnMinusOne() {
+    public void whenElementNotFoundThenReturnMinusOne() {
         int[] data = {5, 10, 3, 7};
         int result = FindLoop.indexOf(data, 8);
         assertThat(result).isEqualTo(-1);
     }
 
     @Test
-    public void whenElementFoundAtStart_thenReturnIndex0() {
+    public void whenElementFoundAtStartThenReturnIndex0() {
         int[] data = {5, 10, 3, 7};
         int result = FindLoop.indexOf(data, 5);
         assertThat(result).isEqualTo(0);
     }
 
     @Test
-    public void whenElementFoundAtEnd_thenReturnLastIndex() {
+    public void whenElementFoundAtEndThenReturnLastIndex() {
         int[] data = {5, 10, 3, 7};
         int result = FindLoop.indexOf(data, 7);
         assertThat(result).isEqualTo(3);
     }
 
     @Test
-    public void whenElementFoundInRange_thenReturnIndex() {
+    public void whenElementFoundInRangeThenReturnIndex() {
         int[] data = {5, 10, 3, 7, 4};
         int result = FindLoop.indexInRange(data, 3, 1, 3);
         assertThat(result).isEqualTo(2);
     }
 
     @Test
-    public void whenElementNotFoundInRange_thenReturnMinusOne() {
+    public void whenElementNotFoundInRangeThenReturnMinusOne() {
         int[] data = {5, 10, 3, 7, 4};
         int result = FindLoop.indexInRange(data, 4, 1, 3);
         assertThat(result).isEqualTo(-1);
     }
 
     @Test
-    public void whenElementFoundAtStartOfRange_thenReturnStartIndex() {
+    public void whenElementFoundAtStartOfRangeThenReturnStartIndex() {
         int[] data = {5, 10, 3, 7, 4};
         int result = FindLoop.indexInRange(data, 10, 1, 4);
         assertThat(result).isEqualTo(1);
     }
 
     @Test
-    public void whenElementFoundAtEndOfRange_thenReturnEndIndex() {
+    public void whenElementFoundAtEndOfRangeThenReturnEndIndex() {
         int[] data = {5, 10, 3, 7, 4};
         int result = FindLoop.indexInRange(data, 4, 1, 4);
         assertThat(result).isEqualTo(4);
