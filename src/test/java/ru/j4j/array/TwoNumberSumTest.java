@@ -58,4 +58,47 @@ class TwoNumberSumTest {
         int[] expected = {2, 3};
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void testGetIndexesValidInput() {
+        int[] array = {1, 2, 3, 4, 6};
+        int target = 10;
+        int[] expected = {3, 4};
+
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void testGetIndexesNoSolution() {
+        int[] array = {1, 2, 3, 4, 6};
+        int target = 12;
+
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    void testGetIndexesEmptyArray() {
+        int[] array = {};
+        int target = 5;
+
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    void testGetIndexesNullArray() {
+        int[] result = TwoNumberSum.getIndexes(null, 5);
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    void testGetIndexesSingleElementArray() {
+        int[] array = {5};
+        int target = 5;
+
+        int[] result = TwoNumberSum.getIndexes(array, target);
+        assertThat(result).isEmpty();
+    }
 }
