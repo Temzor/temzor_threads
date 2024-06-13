@@ -60,4 +60,39 @@ class SimpleStringEncoderTest {
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void testEncodeWithRepeatingCharacters() {
+        String input = "aaabbc";
+        String result = SimpleStringEncoder.encode(input);
+        assertThat(result).isEqualTo("a3b2c");
+    }
+
+    @Test
+    void testEncodeWithSingleCharacters() {
+        String input = "abc";
+        String result = SimpleStringEncoder.encode(input);
+        assertThat(result).isEqualTo("abc");
+    }
+
+    @Test
+    void testEncodeWithEmptyString() {
+        String input = "";
+        String result = SimpleStringEncoder.encode(input);
+        assertThat(result).isEqualTo("");
+    }
+
+    @Test
+    void testEncodeWithNullInput() {
+        String input = null;
+        String result = SimpleStringEncoder.encode(input);
+        assertThat(result).isEqualTo("");
+    }
+
+    @Test
+    void testEncodeWithConsecutiveAndSingleCharacters() {
+        String input = "aabcccccaaa";
+        String result = SimpleStringEncoder.encode(input);
+        assertThat(result).isEqualTo("a2bc5a3");
+    }
 }
