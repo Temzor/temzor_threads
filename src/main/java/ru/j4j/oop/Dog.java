@@ -5,5 +5,6 @@ public class Dog {
         Dog tuzil = new Dog();
         Dog sharik = new Dog();
         Dog palkan = new Dog();
+
     }
 }
