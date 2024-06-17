@@ -1,16 +1,19 @@
 package ru.j4j.oop;
 
 public class Student {
-    public static void music() {
-        System.out.println("ta-ta-ta-ta-ta-ta-ta-ta-ta-ta");
+    public void music(String lyric) {
+        System.out.println("I can sing a sound of " + lyric);
     }
 
-    public static void sing() {
+    public void sing() {
         System.out.println("I believe in Java");
     }
 
     public static void main(String[] args) {
-        Student.music();
-        Student.sing();
+        Student petya = new Student();
+        petya.sing();
+        petya.music("Rammstein");
+        String song = "I believe, I can fly";
+        petya.music(song);
     }
 }
