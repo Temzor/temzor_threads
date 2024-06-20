@@ -10,7 +10,7 @@ public class BinarySearchTest {
         BinarySearch binarySearch = new BinarySearch();
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int target = 3;
-        int result = binarySearch.binarySearch(arr, target);
+        int result = binarySearch.search(arr, target);
         assertThat(result).isEqualTo(2);
     }
 
@@ -19,7 +19,7 @@ public class BinarySearchTest {
         BinarySearch binarySearch = new BinarySearch();
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int target = 11;
-        int result = binarySearch.binarySearch(arr, target);
+        int result = binarySearch.search(arr, target);
         assertThat(result).isEqualTo(-1);
     }
 
@@ -28,7 +28,7 @@ public class BinarySearchTest {
         BinarySearch binarySearch = new BinarySearch();
         int[] arr = {};
         int target = 1;
-        int result = binarySearch.binarySearch(arr, target);
+        int result = binarySearch.search(arr, target);
         assertThat(result).isEqualTo(-1);
     }
 
@@ -37,7 +37,7 @@ public class BinarySearchTest {
         BinarySearch binarySearch = new BinarySearch();
         int[] arr = {5};
         int target = 5;
-        int result = binarySearch.binarySearch(arr, target);
+        int result = binarySearch.search(arr, target);
         assertThat(result).isEqualTo(0);
     }
 
@@ -46,7 +46,7 @@ public class BinarySearchTest {
         BinarySearch binarySearch = new BinarySearch();
         int[] arr = {5};
         int target = 3;
-        int result = binarySearch.binarySearch(arr, target);
+        int result = binarySearch.search(arr, target);
         assertThat(result).isEqualTo(-1);
     }
 }
