@@ -1,6 +1,5 @@
 package ru.j4j.iterator;
 
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -16,8 +15,8 @@ public class MatrixIterator implements Iterator<Integer> {
     @Override
     public boolean hasNext() {
         while (row < data.length && data[row].length == column) {
-            row++;
             column = 0;
+            row++;
         }
         return row < data.length;
     }
