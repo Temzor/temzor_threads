@@ -11,7 +11,7 @@ public class Service {
     }
 
     public void calculateFactorial(int number) {
-        long result = 1;
+        long result = 0;
 
         for (int factor = 2; factor <= number; factor++) {
             result *= factor;
