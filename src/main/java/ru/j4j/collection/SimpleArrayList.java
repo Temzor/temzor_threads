@@ -3,6 +3,7 @@ package ru.j4j.collection;
 import java.util.*;
 
 public class SimpleArrayList<T> implements SimpleList<T> {
+
     private T[] container;
     private int size;
     private int modCount;
@@ -12,8 +13,8 @@ public class SimpleArrayList<T> implements SimpleList<T> {
     }
 
     private void grow() {
-        int newLength = container.length > 0 ? container.length * 2 : 1;
-        container = Arrays.copyOf(container, newLength);
+        int newCapacity = container.length > 0 ? container.length * 2 : 1;
+        container = Arrays.copyOf(container, newCapacity);
     }
 
     @Override
@@ -26,19 +27,19 @@ public class SimpleArrayList<T> implements SimpleList<T> {
     }
 
     @Override
+    public T set(int index, T newValue) {
+        T changedValue = get(index);
+        container[index] = newValue;
+        return changedValue;
+    }
+
+    @Override
     public T remove(int index) {
         T removedValue = get(index);
         System.arraycopy(container, index + 1, container, index, size - index - 1);
         size--;
         modCount++;
         return removedValue;
-    }
-
-    @Override
-    public T set(int index, T newValue) {
-        T changedValue = get(index);
-        container[index] = newValue;
-        return changedValue;
     }
 
     @Override
@@ -55,12 +56,12 @@ public class SimpleArrayList<T> implements SimpleList<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            private int index = 0;
-            public final int expectedModCount = modCount;
+            int index = 0;
+            final int expectedModCount = modCount;
 
             @Override
             public boolean hasNext() {
-                if (modCount != expectedModCount) {
+                if (expectedModCount != modCount) {
                     throw new ConcurrentModificationException("cannot be changed during iteration");
                 }
                 return index < size;
