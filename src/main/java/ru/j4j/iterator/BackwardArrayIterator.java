@@ -32,6 +32,7 @@ public class BackwardArrayIterator implements Iterator<Integer> {
     @Override
     public boolean hasNext() {
         return point >= 0;
+
     }
 
     /**

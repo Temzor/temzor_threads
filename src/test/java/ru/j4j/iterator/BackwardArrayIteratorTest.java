@@ -1,11 +1,12 @@
 package ru.j4j.iterator;
 
 
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class BackwardArrayIteratorTest {
 
@@ -19,6 +20,10 @@ class BackwardArrayIteratorTest {
         assertThat(iterator.next()).isEqualTo(4);
         assertThat(iterator.next()).isEqualTo(3);
         assertThat(iterator.hasNext()).isTrue();
+        assertThat(iterator.next()).isEqualTo(2);
+        assertThat(iterator.next()).isEqualTo(1);
+        assertThat(iterator.hasNext()).isFalse();
+
     }
 
     @Test
