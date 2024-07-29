@@ -32,7 +32,7 @@ public class LogFilter {
 
     public void saveTo(String out, String statusCode) {
         List<String> data = filter(statusCode);
-        try (PrintWriter pw = new PrintWriter(new BufferedOutputStream(new FileOutputStream(out)))) {
+        try (PrintWriter pw = new PrintWriter(new BufferedOutputStream(new FileOutputStream("out.txt")))) {
             data.forEach(pw::println);
         } catch (IOException err) {
             logError(err);
