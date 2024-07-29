@@ -8,7 +8,7 @@ class ConfigTest {
 
     @Test
     void whenPairWithoutComment() {
-        String path = ".data/app.properties";
+        String path = "data/app.properties";
         Config config = new Config(path);
         config.load();
         assertThat(config.value("name")).isEqualTo("Petr Arsentev");

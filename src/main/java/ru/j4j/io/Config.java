@@ -8,19 +8,32 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 public class Config {
-
     private final String path;
-    private final Map<String, String> values = new HashMap<String, String>();
+    private final Map<String, String> values = new HashMap<>();
 
-    public Config(final String path) {
+    public Config(String path) {
         this.path = path;
     }
 
     public void load() {
+        try (BufferedReader input = new BufferedReader(
+                new FileReader(this.path))) {
+            for (String line = input.readLine(); line != null; line = input.readLine()) {
+                if (!line.isEmpty() && !line.startsWith("#")) {
+                    String[] words = line.split("=", 2);
+                    if (words.length != 2 || words[0].isBlank() || words[1].isBlank()) {
+                        throw new IllegalArgumentException("wrong template");
+                    }
+                    values.put(words[0], words[1]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String value(String key) {
-        throw new UnsupportedOperationException("Don't impl this method yet!");
+        return values.get(key);
     }
 
     @Override
@@ -36,5 +49,6 @@ public class Config {
 
     public static void main(String[] args) {
         System.out.println(new Config("data/app.properties"));
+
     }
 }
